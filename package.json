@@ -1,0 +1,22 @@
+{
+  "name": "herdr-s3-clipboard",
+  "version": "0.6.1",
+  "private": true,
+  "description": "A Herdr plugin that publishes clipboard images as durable S3-backed URLs.",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "bin": {
+    "herdr-s3-clipboard": "src/setup.mjs"
+  },
+  "scripts": {
+    "setup": "node src/setup.mjs",
+    "test": "node --test"
+  },
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.0.0",
+    "@aws-sdk/s3-request-presigner": "^3.0.0",
+    "@inquirer/prompts": "^7.10.1"
+  }
+}

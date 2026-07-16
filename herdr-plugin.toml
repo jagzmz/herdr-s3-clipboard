@@ -1,0 +1,27 @@
+id = "hsc.s3-clipboard"
+name = "Herdr S3 Image Publisher"
+version = "0.6.1"
+min_herdr_version = "0.7.0"
+description = "Publish clipboard images as durable public or presigned URLs using S3-compatible storage."
+platforms = ["linux", "macos", "windows"]
+
+[[build]]
+command = ["npm", "ci", "--omit=dev"]
+
+[[actions]]
+id = "upload-clipboard-image"
+title = "Publish clipboard image"
+contexts = ["workspace"]
+command = ["node", "src/upload-clipboard-image.mjs"]
+
+[[actions]]
+id = "configure"
+title = "Configure S3 image publisher"
+contexts = ["workspace"]
+command = ["node", "src/open-setup.mjs"]
+
+[[panes]]
+id = "setup"
+title = "S3 image publisher setup"
+placement = "overlay"
+command = ["node", "src/setup.mjs"]
